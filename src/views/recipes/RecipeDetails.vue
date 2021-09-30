@@ -24,11 +24,6 @@
           <p>Optional: {{ direction.optional }}</p>
         </div>
         <div v-if="specials">
-          <!-- <div v-if="special.ingredientId === recipe.ingredients.uuid">
-              <h3>Specials:</h3>
-              {{ special.ingredientId }}
-              {{ recipe.ingredients.uuid }}
-          </div> -->
           <h3>Specials: </h3>
           <div v-for="special in specials" :key="special">
             <div v-for="ingredient in recipe.ingredients" :key="ingredient.uuid">
@@ -53,7 +48,8 @@ export default {
    data() {
     return {
       recipe: null,
-      specials: null
+      specials: null,
+      publicPath: process.env.BASE_URL
     }
   },
   mounted() {
