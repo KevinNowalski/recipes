@@ -1,14 +1,16 @@
 <template>
-  <h1>Recipes</h1>
-  <div v-if="recipes.length">
-    <div v-for="recipe in recipes" :key="recipe.uuid" class="recipe">
-     <router-link :to="{ name: 'RecipeDetails', params: { id: recipe.uuid} }">
-        <h2>{{ recipe.title }}</h2>    
-     </router-link>
-    </div>   
-  </div>
-  <div v-else>
-    <p>Loading recipes...</p>
+  <div id="recipes">
+    <h1>Recipes</h1>
+    <div v-if="recipes.length">
+      <div v-for="recipe in recipes" :key="recipe.uuid" class="recipe">
+       <router-link :to="{ name: 'RecipeDetails', params: { id: recipe.uuid} }">
+          <h2>{{ recipe.title }}</h2>
+       </router-link>
+      </div>
+    </div>
+    <div v-else>
+      <p>Loading recipes...</p>
+    </div>
   </div>
 </template>
 

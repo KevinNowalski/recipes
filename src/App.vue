@@ -50,11 +50,7 @@ body{
   max-width: 100%;
   margin: 0 auto;
   font-size: 18px;
-  padding: 0 15px;
-}
-
-#app p{
-  text-align: left;
+  padding: 30px 15px;
 }
 
 #nav {
