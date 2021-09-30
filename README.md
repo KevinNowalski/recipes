@@ -1,6 +1,6 @@
 # recipes
 
-Recipes App pulls the data from the API
+The Recipes App pulls the data from the API
 Creates a list view which includes all the recipes
 Creates a recipe detail view to display each recipe
 Ingredients with a matching ingredientId listed in the specials response should also show the special title, type and text under the ingredient name
