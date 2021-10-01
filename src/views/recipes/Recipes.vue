@@ -1,7 +1,7 @@
 <template>
   <div id="recipes"><br>
     <h1>Recipes</h1><br>
-    <div v-if="recipes.length">
+    <div v-if="recipes.length" id="recipe">
       <div v-for="recipe in recipes" :key="recipe.uuid" class="recipe">
        <router-link :to="{ name: 'RecipeDetails', params: { id: recipe.uuid} }">
           <h2>{{ recipe.title }}</h2>
@@ -38,7 +38,7 @@ export default {
     margin: 10px auto;
     max-width: 600px;
     cursor: pointer;
-    color: #444
+    color: #000
   }
   .recipe h2:hover {
     background: #ddd;
