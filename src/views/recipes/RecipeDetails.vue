@@ -1,36 +1,29 @@
 <template>
   <div id="recipe-details">
-      <div v-if="recipe">
-        <h1>{{ recipe.title }}</h1>
-        <p>{{ recipe.description }}</p>
-        <img :src="recipe.images.full" alt="full image"><br>
-        <img :src="recipe.images.medium" alt="medium image"><br>
-        <img :src="recipe.images.small" alt="small image">
+      <div v-if="recipe"><br>
+        <h1>{{ recipe.title }}</h1><br>
+        <img :src="recipe.images.medium" alt="medium image"><br><br>
+        <h2>{{ recipe.description }}</h2><br>
+        <p>Date Posted: {{ recipe.postDate }}</p>
+        <p>Date Edited: {{ recipe.editDate }}</p><br>
         <p>Servings: {{ recipe.servings }}</p>
-        <p>Prep Time: {{ recipe.prepTime }}</p>
-        <p>Cook Time: {{ recipe.cookTime }}</p>
-        <p>Post Date: {{ recipe.postDate }}</p>
-        <p>Edit Date: {{ recipe.editDate }}</p>
-        <h3>Ingredients:</h3>
+        <p>Prep Time: {{ recipe.prepTime }} mins</p>
+        <p>Cook Time: {{ recipe.cookTime }} mins</p><br>
+        <h3>Ingredients:</h3><br>
         <div v-for="ingredient in recipe.ingredients" :key="ingredient.uuid">
-          <p>UUID: {{ ingredient.uuid }}</p>
-          <p>Amount: {{ ingredient.amount }}</p>
-          <p>Measurement: {{ ingredient.measurement }}</p>
-          <p>Name: {{ ingredient.name }}</p>
-        </div>
-        <h3>Directions:</h3>
+          <p>{{ ingredient.amount }} {{ ingredient.measurement }} {{ ingredient.name }}</p>
+        </div><br>
+        <h3>Directions:</h3><br>
         <div v-for="direction in recipe.directions" :key="direction.uuid">
-          <p>Instructions:<br> {{ direction.instructions }}</p>
-          <p>Optional: {{ direction.optional }}</p>
+          <p>{{ direction.instructions }}<span v-if="direction.optional"> *Optional*</span></p> 
         </div>
-        <div v-if="specials">
-          <h3>Specials: </h3>
+        <div v-if="specials"><br>
+          <h3>Specials: </h3><br>
           <div v-for="special in specials" :key="special">
             <div v-for="ingredient in recipe.ingredients" :key="ingredient.uuid">
               <div v-if="special.ingredientId === ingredient.uuid">
-                <p>Type: {{ special.type }}</p>
-                <p>Title: {{ special.title }}</p>
-                <p>Text: {{ special.text }}</p>
+                <p>{{ special.title }} {{ special.type }}</p>
+                <p>{{ special.text }}</p><br>
               </div>
             </div>
           </div>

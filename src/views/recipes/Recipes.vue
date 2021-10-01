@@ -1,6 +1,6 @@
 <template>
-  <div id="recipes">
-    <h1>Recipes</h1>
+  <div id="recipes"><br>
+    <h1>Recipes</h1><br>
     <div v-if="recipes.length">
       <div v-for="recipe in recipes" :key="recipe.uuid" class="recipe">
        <router-link :to="{ name: 'RecipeDetails', params: { id: recipe.uuid} }">
